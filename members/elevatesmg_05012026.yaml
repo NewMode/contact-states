@@ -1,0 +1,37 @@
+bioguide: elevatesmg_05012026 
+contact_form:
+  method: POST
+  action: ""
+  steps:
+    - visit: "https://www.elevatesmg.com/contact"
+    - wait:
+        - value: 5
+    - find:
+        - selector: "#textarea-yui_3_17_2_1_1553888888520_3747"
+    - javascript:
+        - value: "Array.prototype.forEach.call(document.querySelectorAll('style,[rel=\"stylesheet\"],[type=\"text/css\"]'), function(element) {try{ element.parentNode.removeChild(element) } catch(err){} });"
+    - fill_in:
+        - selector: "#name-yui_3_17_2_1_1553888888520_3744-fname-field"
+          value: $NAME_FIRST
+          required: true
+        - selector: "#name-yui_3_17_2_1_1553888888520_3744-lname-field"
+          value: $NAME_LAST
+          required: truez
+        - selector: "#email-yui_3_17_2_1_1553888888520_3745-field"
+          value: $EMAIL
+          required: true
+        - selector: "#textarea-yui_3_17_2_1_1553888888520_3747-field"
+          value: $MESSAGE
+          required: true
+        - selector: "#checkbox-6c3d52f9-ce6e-499a-bca6-272db1558872"
+          value: true
+          required: true
+    - find:
+        - selector: "button[data-sqsp-button='true']"
+    - click_on:
+        - selector: "button[data-sqsp-button='true']"
+  success:
+    headers:
+      status: 200
+    body:
+      contains: Thank you!
