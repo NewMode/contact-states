@@ -7,9 +7,9 @@ contact_form:
     - wait:
         - value: 5
     - javascript:
-      - value: "Array.prototype.forEach.call(document.querySelectorAll('style,[rel=\"stylesheet\"],[type=\"text/css\"]'), function(element){ try{ element.parentNode.removeChild(element) } catch(err){} });"
-    - wait:
-        - value: 5
+        -  value: "var xhr = new XMLHttpRequest(); xhr.open('POST', '/api/form/FormBlock', true); xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest'); xhr.send('formId=61b22dad34c6405d4d4c8975&fname=FIRSTNAME&lname=LASTNAME&email=EMAIL&message=MESSAGE');"
+        - wait:
+            - value: 5
     - find:
         - selector: "#block-yui_3_17_2_1_1738706181159_5703"
           options:
