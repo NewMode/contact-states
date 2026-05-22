@@ -7,7 +7,7 @@ contact_form:
     - wait:
         - value: 5
     - javascript:
-        value: "window.scrollTo(0, document.body.scrollHeight);"
+        value: "window.dispatchEvent(new Event('scroll')); window.scrollTo(0, 500);"
     - wait:
         - value: 5
     - find:
