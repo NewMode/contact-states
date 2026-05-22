@@ -8,8 +8,6 @@ contact_form:
         - value: 5
     - find:
         - selector: "#block-yui_3_17_2_1_1738706181159_5703"
-    - javascript:
-        - value: "Array.prototype.forEach.call(document.querySelectorAll('style,[rel=\"stylesheet\"],[type=\"text/css\"]'), function(element) {try{ element.parentNode.removeChild(element) } catch(err){} });"
     - fill_in:
         - selector: "#name-yui_3_17_2_1_1553888888520_3744-fname-field"
           value: $NAME_FIRST
