@@ -4,26 +4,26 @@ contact_form:
   action: ""
   steps:
     - visit: "https://www.elevatesmg.com/contact"
-    - wait:
-        - value: 5
     - find:
         - selector: "#block-yui_3_17_2_1_1738706181159_5703"
+        - wait: 15
     - fill_in:
         - selector: "#name-yui_3_17_2_1_1553888888520_3744-fname-field"
           value: $NAME_FIRST
           required: true
         - selector: "#name-yui_3_17_2_1_1553888888520_3744-lname-field"
           value: $NAME_LAST
-          required: truez
+          required: true
         - selector: "#email-yui_3_17_2_1_1553888888520_3745-field"
           value: $EMAIL
           required: true
         - selector: "#textarea-yui_3_17_2_1_1553888888520_3747-field"
           value: $MESSAGE
           required: true
+    - find:
         - selector: "#checkbox-6c3d52f9-ce6e-499a-bca6-272db1558872"
-          value: true
-          required: true
+    - click_on:
+        - selector: "checkbox-6c3d52f9-ce6e-499a-bca6-272db1558872"
     - find:
         - selector: "button[data-sqsp-button='true']"
     - click_on:
