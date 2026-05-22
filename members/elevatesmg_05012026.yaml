@@ -1,12 +1,19 @@
-bioguide: elevatesmg_05012026 
+bioguide: elevatesmg_05012026
 contact_form:
   method: POST
   action: ""
   steps:
     - visit: "https://www.elevatesmg.com/contact"
+    - wait:
+        - value: 5
+    - javascript:
+        value: "window.scrollTo(0, document.body.scrollHeight);"
+    - wait:
+        - value: 5
     - find:
         - selector: "#block-yui_3_17_2_1_1738706181159_5703"
-        - wait: 15
+          options:
+            wait: 10
     - fill_in:
         - selector: "#name-yui_3_17_2_1_1553888888520_3744-fname-field"
           value: $NAME_FIRST
@@ -22,8 +29,10 @@ contact_form:
           required: true
     - find:
         - selector: "#checkbox-6c3d52f9-ce6e-499a-bca6-272db1558872"
+          options:
+            wait: 10
     - click_on:
-        - selector: "checkbox-6c3d52f9-ce6e-499a-bca6-272db1558872"
+        - selector: "#checkbox-6c3d52f9-ce6e-499a-bca6-272db1558872"
     - find:
         - selector: "button[data-sqsp-button='true']"
     - click_on:
